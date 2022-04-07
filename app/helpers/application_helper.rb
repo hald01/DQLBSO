@@ -1,12 +1,7 @@
 module ApplicationHelper
-
   def full_title(page_title = '')
     base_title = "Book Store Online"
-    if page_title.empty?
-    base_title
-    else
+    return base_title if page_title.empty?
     page_title + " | " + base_title
-    end
   end
-    
 end

@@ -15,58 +15,32 @@ User.create!(name:  "Admin",
              admin: true
              )
 
-for a in 2...10 do
-  User.create(name: "User 00#{a}",
-            email: "test00#{a}@gmail.com",
+for test_user_id in 2...10 do
+  User.create(name: "User 00#{test_user_id}",
+            email: "test00#{test_user_id}@gmail.com",
             password: "123456",
             password_confirmation: "123456")    
 end
 
-$b=10
-
-while $b<20 do
-  User.create(name: "User 0#{$b}",
-              email: "test0#{$b}@gmail.com",
+while test_user_id<50 do
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
               password: "123456",
               password_confirmation: "123456")   
-  $b+=1
+  test_user_id+=1
 end
 
-$c=20
-
-begin
-  User.create(name: "User 0#{$c}",
-              email: "test0#{$c}@gmail.com",
+until test_user_id>=90 do
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
               password: "123456",
               password_confirmation: "123456")   
-  $c+=1
-end while $c<50
-
-$d=50
-
-until $d>=70 do
-  User.create(name: "User 0#{$d}",
-              email: "test0#{$d}@gmail.com",
-              password: "123456",
-              password_confirmation: "123456")   
-  $d+=1
+  test_user_id+=1
 end
 
-$e=70
-
-begin
-  User.create(name: "User 0#{$e}",
-              email: "test0#{$e}@gmail.com",
-              password: "123456",
-              password_confirmation: "123456")   
-  $e+=1
-end until $e>=90
-
-$f=90
-
-(90...100).each do |f|
-  User.create(name: "User 0#{f}",
-              email: "test0#{f}@gmail.com",
+(90..100).each do |test_user_id|
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
               password: "123456",
               password_confirmation: "123456")   
 end

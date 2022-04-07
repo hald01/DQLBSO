@@ -1,12 +1,12 @@
-<li><pre>User <%= user.id %></pre>
+<p><pre>User <%= user.id %></pre>
   <ul>
-    <li><pre>Name    : <%= user.name %>      </pre></li>
-    <li><pre>Age     : <%= user.age %>       </pre></li>
-    <li><pre>Address  : <%= user.address %>    </pre></li>
-    <li><pre>Phone   : <%= user.phone %>     </pre></li>
-    <li><pre>Email   : <%= user.email %>     </pre></li>
-    <% if current_user.admin? && !current_user?(user) %>
-      | <%= link_to "delete", user, data: {"turbo-method": :delete} %>
+    <p><pre>Name    : <%= user.name %>      </pre></p>
+    <p><pre>Age     : <%= user.age %>       </pre></p>
+    <p><pre>Address : <%= user.address %>    </pre></p>
+    <p><pre>Phone   : <%= user.phone %>     </pre></p>
+    <p><pre>Email   : <%= user.email %>     </pre></p>
+    <% if user.id != 1 %>
+      <%= link_to "Delete User", user, data: { "turbo-method": :delete} %>
     <% end %>
   </ul>
-</li>
+</p>
