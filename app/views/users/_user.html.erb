@@ -5,5 +5,8 @@
     <li><pre>Address  : <%= user.address %>    </pre></li>
     <li><pre>Phone   : <%= user.phone %>     </pre></li>
     <li><pre>Email   : <%= user.email %>     </pre></li>
+    <% if current_user.admin? && !current_user?(user) %>
+      | <%= link_to "delete", user, data: {"turbo-method": :delete} %>
+    <% end %>
   </ul>
 </li>

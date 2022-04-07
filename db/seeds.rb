@@ -16,7 +16,7 @@ User.create!(name:  "Admin",
              )
 
 for a in 2...10 do
-  User.create(   name: "User 00#{a}",
+  User.create(name: "User 00#{a}",
             email: "test00#{a}@gmail.com",
             password: "123456",
             password_confirmation: "123456")    
@@ -24,10 +24,49 @@ end
 
 $b=10
 
-while $b<100 do
-  User.create(   name: "User 0#{$b}",
+while $b<20 do
+  User.create(name: "User 0#{$b}",
               email: "test0#{$b}@gmail.com",
               password: "123456",
               password_confirmation: "123456")   
   $b+=1
+end
+
+$c=20
+
+begin
+  User.create(name: "User 0#{$c}",
+              email: "test0#{$c}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
+  $c+=1
+end while $c<50
+
+$d=50
+
+until $d>=70 do
+  User.create(name: "User 0#{$d}",
+              email: "test0#{$d}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
+  $d+=1
+end
+
+$e=70
+
+begin
+  User.create(name: "User 0#{$e}",
+              email: "test0#{$e}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
+  $e+=1
+end until $e>=90
+
+$f=90
+
+(90...100).each do |f|
+  User.create(name: "User 0#{f}",
+              email: "test0#{f}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
 end

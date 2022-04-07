@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   validates :address, presence: true, length: { maximum: 100 }, allow_nil: true
 
-  validates :phone, presence: true, length: { maximum: 12 }, allow_nil: true
+  validates :phone, presence: true, length: { maximum: 12, minimum: 6 }, allow_nil: true
   
 end
 
