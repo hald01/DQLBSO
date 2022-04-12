@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_06_044957) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.integer "age"
-    t.string "adress"
+    t.string "address"
     t.integer "phone"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true

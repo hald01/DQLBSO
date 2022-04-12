@@ -10,21 +10,37 @@ User.create!(name:  "Admin",
              password:              "852963",
              password_confirmation: "852963",
              age:   "18",
-             adress:"10.Ngo Gia Tu - Hai Chau - Da Nang",
+             address:"10.Ngo Gia Tu - Hai Chau - Da Nang",
              phone: "19001000",
              admin: true
              )
-#
-for a in 2...10 do
-User.create(   name: "User 00#{a}",
-            email: "test00#{a}@gmail.com",
+
+for test_user_id in 2...10 do
+  User.create(name: "User 00#{test_user_id}",
+            email: "test00#{test_user_id}@gmail.com",
             password: "123456",
             password_confirmation: "123456")    
 end
-#
-for a in 10...100 do
-    User.create(   name: "User 0#{a}",
-                email: "test0#{a}@gmail.com",
-                password: "123456",
-                password_confirmation: "123456")    
+
+while test_user_id<50 do
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
+  test_user_id+=1
+end
+
+until test_user_id>=90 do
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
+  test_user_id+=1
+end
+
+(90..100).each do |test_user_id|
+  User.create(name: "User 0#{test_user_id}",
+              email: "test0#{test_user_id}@gmail.com",
+              password: "123456",
+              password_confirmation: "123456")   
 end
