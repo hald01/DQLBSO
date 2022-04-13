@@ -1,21 +1,22 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <%= link_to "Book Store", root_path , id: "logo" %>
-        <nav>
-            <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to "Home", root_path %></li>   
-                <% if logged_in? %>
-                    <li><%= link_to "Market Books", about_path %></li>
-                    <% if current_user.admin? && !current_user?(@users) %>
-                        <li><%= link_to "Users", users_path %></li>
-                    <% end %>
-                    <li><%= link_to "Profile", current_user %></li>
-                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                    <li><%= link_to "Sign Out", signout_path, data: {"turbo-method": :delete} %></li>
-                <% else %>  
-                    <li><%= link_to "Sign In", signin_path %></li> 
-                <% end %>               
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <%= link_to "Book Store", root_path , id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>          
+        <li><%= link_to "Books world", books_path %></li> 
+        <% if logged_in? %>
+          <% if current_user.admin? && !current_user?(@users) %>
+            <li><%= link_to "Add new Books", new_book_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+          <% end %>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+          <li><%= link_to "Sign Out", signout_path, data: {"turbo-method": :delete} %></li>
+        <% else %>  
+          <li><%= link_to "Sign In", signin_path %></li> 
+        <% end %>               
+      </ul>
+    </nav>
+  </div>
 </header>

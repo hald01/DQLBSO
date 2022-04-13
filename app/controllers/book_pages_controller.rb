@@ -1,6 +1,7 @@
 class BookPagesController < ApplicationController
   def home
   end
-  def about
+
+  def error
   end
 end
