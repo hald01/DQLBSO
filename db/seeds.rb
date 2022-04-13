@@ -44,3 +44,10 @@ end
               password: "123456",
               password_confirmation: "123456")   
 end
+
+for test_book_id in 1...100 do
+  Book.create(name: "Connan ep-#{test_book_id}",
+            price: "1#{test_book_id}",
+            number: "22"
+  )    
+end
