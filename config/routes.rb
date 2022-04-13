@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
 
   get '/error', to: 'book_pages#error'
-  get '/about', to: 'book_pages#about'
   root 'book_pages#home'
 
   resources :users
+  resources :books
+
 end
