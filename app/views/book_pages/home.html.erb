@@ -1,6 +1,8 @@
 
 <div class="container">
   <h1>we have all book on the world</h1>
-  <h1><%= link_to "Sign up now! to get 10% discount", signup_path, class: "btn btn-lg btn-primary" %></h1>  
+  <% unless logged_in? %>
+    <h1><%= link_to "Sign up now! to get 10% discount", signup_path, class: "btn btn-lg btn-primary" %></h1> 
+  <% end %> 
 </div>
 

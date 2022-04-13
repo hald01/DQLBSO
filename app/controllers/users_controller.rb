@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Book Store!"
-      redirect_to @user
+      redirect_to books_path
     else
       render 'new', status: :unprocessable_entity
     end
@@ -50,33 +50,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :address, :phone)
-  end
-
-  def logged_in_user
-    return if logged_in?
-    flash[:danger] = "Please log in."
-    redirect_to signin_path
-  end
-
-  def correct_user
-    return if current_user?(@user)
-    flash[:success] = "you can't see another user info"
-    redirect_to error_path
-  end
-
-  def admin_user
-    return if current_user.admin?
-    flash[:success] = "only admin can see user list"
-    redirect_to error_path
-  end
-
-  def load_user    
-    user = User.find_by(id: params[:id])
-    if user.present?
-      @user = user
-    else
-      flash[:danger] = "User id does not exits"
-      redirect_to error_path
-    end
   end
 end

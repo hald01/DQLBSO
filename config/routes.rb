@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   delete '/signout', to: 'sessions#destroy'
 
+  get '/set_cookies', to: 'book_pages#set_cookies'
+  get '/show_cookies', to: 'book_pages#show_cookies'
   get '/error', to: 'book_pages#error'
-  get '/about', to: 'book_pages#about'
   root 'book_pages#home'
 
   resources :users
+  resources :books
+
 end

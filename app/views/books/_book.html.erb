@@ -1,0 +1,15 @@
+<p><pre>Book id: <%= book.id %></pre>
+  <ul>
+    <p><pre>Name    : <%= book.name %> </pre></p>
+    <p><pre>Price   : <%= book.price %> </pre></p>
+    <p><pre>Number  : <%= book.number %> </pre></p>
+    
+    <div class="form-group">
+      <p type="button" ><%= link_to 'Click to see info', book_path(id: book.id) %></p>   
+      <% if logged_in? && current_user.admin? %>
+        <p type="button" class="btn btn-info"><%= link_to "Edit Book ", edit_book_path(id: book.id) %></p>        
+        <p type="button" class="btn btn-info"><%= link_to "Delete Book", book, data: { "turbo-method": :delete} %></p>        
+      <% end %>
+    </div>
+  </ul>
+</p>
