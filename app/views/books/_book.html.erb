@@ -6,7 +6,10 @@
     
     <div class="form-group">
       <p type="button" ><%= link_to 'Click to see info', book_path(id: book.id) %></p>   
-      <% if logged_in? && current_user.admin? %>
+      <% if logged_in? %>
+       <p type="button" ><%= link_to 'Add to cart', add_book_to_cart_user_path(id: current_user.id, book_id: book.id, book_name: book.name, book_price: book.price), data: { "turbo-method": :patch}%></p>  
+       <% end %>
+       <% if logged_in? && current_user.admin? %>
         <p type="button" class="btn btn-info"><%= link_to "Edit Book ", edit_book_path(id: book.id) %></p>        
         <p type="button" class="btn btn-info"><%= link_to "Delete Book", book, data: { "turbo-method": :delete} %></p>        
       <% end %>
