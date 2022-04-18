@@ -3,12 +3,13 @@
     <%= link_to "Book Store", root_path , id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>          
-        <li><%= link_to "Books world", books_path %></li> 
         <% if logged_in? %>
           <% if current_user.admin? && !current_user?(@users) %>
             <li><%= link_to "Add new Books", new_book_path %></li>
             <li><%= link_to "Users", users_path %></li>
+          <% end %>
+          <% if current_user %>
+            <li><%= link_to "Cart", cart_user_path(id: current_user.id) %></li>
           <% end %>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Settings", edit_user_path(current_user) %></li>

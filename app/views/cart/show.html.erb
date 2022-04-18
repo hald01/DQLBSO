@@ -1,0 +1,16 @@
+<% provide(:title, @user.name) %>
+
+<div class="container">
+  <div class="row">
+    <aside class="col-lg-12">
+      <h1>User : <%=@user.name%></h1>
+      <pre><p>
+        <% @cart.books.each do |book|  %>
+          Books name : <%= book[1] %> --- Books price: <%= book[2] %>
+          <hr>
+        <% end %>
+      </p><pre>
+      <h1>Total cost : <%=@cart.total_cost%></h1>
+    </aside>
+  </div>
+</div>

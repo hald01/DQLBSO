@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, except: :index
+  before_action :logged_in_user, except: [:index, :show]
   before_action :load_book, except: [:new, :create, :index]
   before_action :admin_user, only: [:new, :create, :destroy]
 
